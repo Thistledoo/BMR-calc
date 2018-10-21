@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>calculator 2</title>
+<style>
+	#calc{
+		width:300px;
+		margin:auto;
+		font-family:Tahoma, Geneva, sans-serif;
+		border: 1px solid #ccc;
+	}
+	#calc h3{
+		text-transform: uppercase;
+		background:#0972B2;
+		font-family:'Oswald', Helvetica, Arial, sans-serif;
+		color:#fff;
+		font-weight:300;
+		padding:10px;
+	}
+	.gender .radio{
+		display:inline-block;
+		width:44%;
+	}
+	.calc_desc{font-size:smaller;padding:0 10px;}
+
+</style>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&ver=4.9.5">
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src= "calculator.js"></script>
+ 
+<div ng-app="CalculatorApp" ng-controller="CalculatorController" id="calc">
+
+
+<h3>Calculate your TDEE</h3>
+<div class="calc_desc">
+<p>Achieve your goals with this free online tool.  It calculates your Basal Metabolic Rate which you can use to set a calorie usage target suitable for your body building goals.</p>
+</div>
+  <div class="formfield">
+  	<p><label>Age</label>
+  	<input type="number" ng-model="a"></p>
+  </div>
+
+ 	<div class="formfield">
+  	<p><label>Height</label>
+  	<input type="number" ng-model="b"></p>
+	</div>
+
+ 	<div class="formfield">
+  	<p><label>Weight</label>
+  	<input type="number" ng-model="c"></p>
+	</div>
+	<div class="gender">
+		<div class="radio">
+	 		<input type="radio" ng-model="gender" value="male"> Male
+	 	</div>
+	 	<div class="radio">
+	 		<input type="radio" ng-model="gender" value="female"> Female
+	 	</div>
+	</div>
+
+  <p class="result">{{ result() }}</p>
+ </div>
+</body>
+
+</html>
